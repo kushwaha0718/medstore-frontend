@@ -66,7 +66,7 @@ export default function Hero() {
                         >
                             <MessageCircleMore className="h-5 w-5" />
                             <span className="hidden sm:inline">Order on WhatsApp</span>
-                            <span className="sm:hidden">Order on WhatsApp</span>
+                            <span className="sm:hidden">WhatsApp Order</span>
                         </a>
 
                     </div>

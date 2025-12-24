@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import Hero from "./Components/Hero";
 import NavBar from "./Components/NavBar";
 
@@ -11,6 +12,7 @@ function App() {
       <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-teal-200/60 blur-3xl animate-blob animation-delay-4000"></div>
 
       {/* Main Content */}
+      <Toaster position="top-right" />
       <NavBar/>
       <Hero/>
     </div>
