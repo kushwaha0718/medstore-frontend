@@ -40,7 +40,7 @@ export default function Hero() {
                             href="tel:+918100620066"
                             className="
                                 flex items-center justify-center gap-1 
-                                rounded-xl bg-emerald-600 px-4 py-2.5 sm:px-6 sm:py-3 text-white font-medium shadow-md hover:bg-emerald-700 hover:scale-105 transition-all duration-300 "
+                                rounded-xl bg-green-500/70 px-4 py-2.5 sm:px-6 sm:py-3 text-white font-medium shadow-md hover:bg-green-500 hover:scale-105 transition-all duration-300 "
                         >
                             <Phone className="h-5 w-5" />
                             <span className="hidden sm:inline">Call us to Order</span>
@@ -60,7 +60,7 @@ export default function Hero() {
                                 sm:px-6 sm:py-3
                                 text-white font-medium
                                 shadow-md
-                                hover:bg-green-600 hover:scale-105
+                                hover:bg-green-500 hover:scale-105
                                 transition-all duration-300
                             "
                         >
