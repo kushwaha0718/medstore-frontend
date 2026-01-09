@@ -62,12 +62,11 @@ export default function HighlightedProducts() {
 
     if (error) {
         return (
-            <div className="bg-red-50 border border-red-200 rounded-xl p-6 flex items-center gap-3 max-w-xl mx-auto my-10">
-                <AlertCircle className="h-6 w-6 text-red-600" />
-                <div>
-                    <h3 className="font-semibold text-red-900">Error Loading Highlighted Products</h3>
-                    <p className="text-red-700">{error}</p>
-                    <button onClick={fetchHighlightedProducts} className="mt-2 text-sm text-red-600 underline">
+            <div className=" rounded-xl p-6 flex items-center justify-center gap-3 max-w-xl mx-auto my-10 bg-emerald-200/20">
+                
+                <div className="flex flex-col items-center">
+                    <h3 className="flex  gap-2 font-semibold"><AlertCircle className="h-6 w-6 text-emerald-500" />No Bestseller product Found</h3>
+                    <button onClick={fetchHighlightedProducts} className="mt-2 text-sm  underline text-emerald-500">
                         Try Again
                     </button>
                 </div>
@@ -76,7 +75,7 @@ export default function HighlightedProducts() {
     }
 
     return (
-        <section className="relative w-full py-4 px-4 bg-emerald-500/15">
+        <section className="relative w-full py-4 px-2 bg-emerald-500/15">
 
             {/* FORCE HIDE SCROLLBAR */}
             <style>
@@ -119,7 +118,7 @@ export default function HighlightedProducts() {
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
-                    className="no-scrollbar flex gap-1 md:gap-2 overflow-x-auto px-4 py-4 scroll-smooth bg-white/50 rounded-2xl"
+                    className="no-scrollbar flex gap-1 md:gap-2 overflow-x-auto px-2 py-2 scroll-smooth bg-white/50 rounded-2xl"
                 >
                     {products.map((product, i) => (
                         <div
