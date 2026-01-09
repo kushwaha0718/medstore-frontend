@@ -89,27 +89,27 @@ export default function HighlightedProducts() {
 
                 <div className="text-center md:text-start mb-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        BestSelling <span className="text-emerald-600">Products <i class="fa-solid fa-arrow-trend-up"></i></span>
+                        BestSelling <span className="text-emerald-600">Products <i className="fa-solid fa-arrow-trend-up"></i></span>
                     </h2>
                     <p className="text-gray-600 mt-2">Specially selected medicines and top-sellers</p>
                 </div>
 
                 {/* LEFT FADE - with dynamic visibility */}
                 <div
-                    className={`pointer-events-none absolute rounded-2xl left-0 top-25 md:top-26 w-10 md:w-20 h-75 md:h-79 bg-linear-to-r from-black/40 via-black/5 to-transparent z-10 transition-opacity duration-300 ${showLeftFade ? 'opacity-100' : 'opacity-0'
+                    className={`pointer-events-none absolute rounded-2xl left-0 top-25 md:top-26 w-10 md:w-20 h-71 md:h-75 bg-linear-to-r from-black/40 via-black/5 to-transparent z-10 transition-opacity duration-300 ${showLeftFade ? 'opacity-100' : 'opacity-0'
                         }`}
                 />
 
                 {/* RIGHT FADE - with dynamic visibility */}
                 <div
-                    className={`pointer-events-none absolute rounded-2xl right-0 top-25 md:top-26 w-10 md:w-20 md:h-79 h-75 bg-linear-to-l from-black/40 via-black/5 to-transparent z-10 transition-opacity duration-300 ${showRightFade ? 'opacity-100' : 'opacity-0'
+                    className={`pointer-events-none absolute rounded-2xl right-0 top-25 md:top-26 w-10 md:w-20 md:h-75 h-71 bg-linear-to-l from-black/40 via-black/5 to-transparent z-10 transition-opacity duration-300 ${showRightFade ? 'opacity-100' : 'opacity-0'
                         }`}
                 />
 
                 {/* ARROWS */}
                 <button
                     onClick={scrollLeft}
-                    className="absolute left-0 top-60 -translate-y-1/2 z-20 bg-emerald-200/50 shadow-md p-2 rounded-full border border-emerald-400 hover:bg-emerald-600 hover:text-white transition"
+                    className="absolute left-0 top-60 -translate-y-1/2 z-20 bg-emerald-200/50 shadow-lg p-2 rounded-full border border-emerald-400 hover:bg-emerald-600 hover:text-white transition"
                 >
                     <ChevronLeft className="h-5 w-5" />
                 </button>

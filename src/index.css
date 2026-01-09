@@ -1,2 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Grand+Hotel&family=Lexend:wght@100..900&family=Londrina+Shadow&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Iso&display=swap');
 @import "tailwindcss";
+
+
+.bg-admin-pattern {
+  background-color: #f9fafb;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10 L40 10 L50 25 L40 40 L20 40 L10 25 Z' stroke='rgba(0,0,0,0.06)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  opacity: 1;
+}
+
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: white; 
+  border: 2px solid #10b981; /* emerald */
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-checkbox:checked {
+  background-color: #10b981; /* emerald */
+  border-color: #10b981;
+}
+
+.custom-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;  /* white tick */
+  font-size: 16px;
+  left: 5%;
+  top: -5px;
+  font-weight: bold;
+}

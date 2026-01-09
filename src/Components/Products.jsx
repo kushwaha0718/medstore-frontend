@@ -20,11 +20,11 @@ export default function Products() {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(null); // ⭐ NEW
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState('default');
 
@@ -68,10 +68,6 @@ export default function Products() {
     } catch (err) {
       console.error("Category loading failed", err);
     }
-  };
-
-  const handleProductAdded = () => {
-    fetchProducts();
   };
 
   /* ---------------- FILTERING + SEARCH + SORT ---------------- */
@@ -144,27 +140,17 @@ export default function Products() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
-              Explore <span className="text-emerald-600">Products</span>
+              Explore <span className="text-emerald-600">Products <i className="fa-solid fa-box-open"></i></span>
             </h2>
             <p className="text-gray-600">
               Browse our collection of quality medicines and healthcare products
             </p>
           </div>
 
-          <button
-            onClick={() => setIsAddModalOpen(true)}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-emerald-500 text-white rounded-xl font-medium hover:bg-emerald-600 shadow-md"
-          >
-            <Plus className="h-5 w-5" />
-            Add Product
-          </button>
+          
         </div>
 
-        <AddProductModal
-          isOpen={isAddModalOpen}
-          onClose={() => setIsAddModalOpen(false)}
-          onProductAdded={handleProductAdded}
-        />
+        
 
 
 
@@ -176,7 +162,7 @@ export default function Products() {
             <input
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search..."
+              placeholder="Search product ..."
               className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500"
             />
           </div>
@@ -206,10 +192,10 @@ export default function Products() {
           <button
             onClick={() => scrollRef.current.scrollBy({ left: -150, behavior: "smooth" })}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10
-           bg-white p-2 rounded-full
-           shadow-[0_2px_12px_rgba(0,0,0,0.7)]
-           border border-gray-200
-           hover:bg-gray-100 active:scale-90 transition"
+           bg-white p-2 rounded-2xl
+           shadow-[0_2px_12px_rgba(0,0,0,0.3)]
+           hover:shadow-[0_2px_12px_rgba(0,0,0,0.7)]
+           hover:bg-emerald-200 active:scale-90 transition hidden md:block"
           >
             <ChevronLeft className="w-5 h-5 text-gray-700" />
           </button>
@@ -217,7 +203,7 @@ export default function Products() {
           {/* Scrollable Category Row */}
           <div
             ref={scrollRef}
-            className="flex gap-2 overflow-x-auto scrollbar-hide px-12"
+            className="flex gap-2 overflow-x-auto scrollbar-hide px-0 md:px-12"
           >
             {/* ALL Button */}
             <button
@@ -254,8 +240,9 @@ export default function Products() {
             onClick={() => scrollRef.current.scrollBy({ left: 150, behavior: "smooth" })}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10
            bg-white p-2 rounded-2xl
-           shadow-[0_2px_12px_rgba(0,0,0,0.7)]
-           hover:bg-gray-100 active:scale-90 transition"
+           shadow-[0_2px_12px_rgba(0,0,0,0.3)]
+           hover:shadow-[0_2px_12px_rgba(0,0,0,0.7)]
+           hover:bg-emerald-200 active:scale-90 transition hidden md:block"
 
           >
             <ChevronRight className="w-5 h-5 text-gray-700" />
@@ -267,7 +254,7 @@ export default function Products() {
         {/* NO PRODUCT FOUND */}
         {filteredProducts.length === 0 && (
           <div className="flex flex-col items-center justify-center py-16 text-gray-600">
-            <img src="/public/nothing_found.png" className="w-40 opacity-70" />
+            <img src="/nothing_found.png" className="w-40 opacity-70" />
             <p className="mt-4 text-lg font-medium">No products found</p>
           </div>
         )}
