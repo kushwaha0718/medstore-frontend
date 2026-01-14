@@ -53,7 +53,7 @@ export default function Footer() {
                             <p className="text-gray-600">Medindia Healthcare – Trusted Pharmacy in Kolkata for Speciality Medicines | PAN India Delivery Welcome to Medindia Healthcare, a leading pharmacy and medical store in Kolkata providing speciality medicines across India. We specialize in supplying hard-to-find and life-saving drugs such as Erythropoietin, Adalimumab, Denosumab, Darbepoetin, Teriparatide, and more — all sourced from trusted and certified pharmaceutical manufacturers.</p>
                             <p 
                                 className="flex gap-2 items-center mt-3 text-gray-600 cursor-pointer"
-                                onClick={()=>window.open("admin-login","_blank")}
+                                onClick={()=>window.open("/admin-login","_blank")}
                             >
                                 <UserCircle2Icon className="w-5 h-5 text-green-600" /> Nitish Kushwaha (Director)
                             </p>
